@@ -20,6 +20,11 @@
             <Button Content="Adicionar" Width="120" Height="30" Click="Adicionar_Click"/>
             <Button Content="Limpar Lista" Width="120" Height="30" Click="Limpar_lista_Click"/>
             <Button Content="Editar Tarefa" Width="120" Height="30" Click="Editartarefa_OnClick"/>
+            <!-- Botão duplicar tarefa -->
+            <Button Content="Diuplicar tarefa"
+                    Width="120"
+                    Height="30"
+                    Click="BtnDuplicar"/>
         </StackPanel>
 
         <!-- Lista -->

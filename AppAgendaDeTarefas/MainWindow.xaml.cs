@@ -16,6 +16,7 @@ namespace AppAgendaDeTarefas;
 /// </summary>
 public partial class MainWindow : Window
 {
+    private string descricao;
     private List<String> listaTarefas = new List<String>();
     
     public MainWindow()
@@ -53,7 +54,7 @@ public partial class MainWindow : Window
     }
     private void AdicionarTarefas()
     {
-        string descricao = TxtTarefa.Text.Trim();
+         descricao = TxtTarefa.Text.Trim();
 
         if (!string.IsNullOrWhiteSpace(descricao))
         {
@@ -79,4 +80,24 @@ public partial class MainWindow : Window
             MessageBox.Show("Selecione uma tarefa para editar!");
         }
     }
+
+    //Botão de duplicar tarefa selecionada
+    private void BtnDuplicar(object sender, RoutedEventArgs e)
+    {
+        if (ListaTarefas.SelectedItem != null)
+        {
+            string duplicata = ListaTarefas.SelectedItem.ToString();
+            ListaTarefas.Items.Add(duplicata);
+            
+            MessageBox.Show("Tarefa Duplicada com sucesso!", "Duplicar",MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+        else
+        {
+            MessageBox.Show("Selecione uma tarefa para duplicar!", "Duplicar",MessageBoxButton.OK, MessageBoxImage.Information);
+
+        }
+       
+
+    }
+    
 }
